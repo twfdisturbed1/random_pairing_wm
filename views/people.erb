@@ -1,0 +1,34 @@
+    <%=peeps1 = []%>
+    <%=peeps2 = []%>
+    <%=peeps3 = []%>
+    <%=peeps1 << :name1 << :name2 << :name3 << :name4 << :name5 << :name6 << :name7 << :name8 << :name9 %>
+        <%=mixing = peeps1.shuffle.to_s%>
+        <%=if mixing.length.odd? == false%>
+        <%peeps2 = mixing.each_slice(2).to_a %>
+        <%=else %>
+        <%peeps2 = mixing.each_slice(2).to_a%>
+        <%peeps3 = peeps2.last(2)%>
+        <%peeps3 = peeps2[0] + peeps3[1]%>
+        <%peeps2 = peeps2[0..-3]%>
+        <%peeps2.push(peeps3)%>
+        <%end%>
+
+    <%end%>
+<div class="center">
+<form method="post" action="peeps">
+    <p class="results">
+        Here are your names.
+    </p>
+    <div class="name_container">
+        <input type="hidden" name="name1" value="<%=name1%>" class="people_input">
+        <input type="hidden" name="name2" value="<%=name2%>" class="people_input">
+        <input type="hidden" name="name3" value="<%=name3%>" class="people_input">
+        <input type="hidden" name="name4" value="<%=name4%>" class="people_input">
+        <input type="hidden" name="name5" value="<%=name5%>" class="people_input">
+        <input type="hidden" name="name6" value="<%=name6%>" class="people_input">
+        <input type="hidden" name="name7" value="<%=name7%>" class="people_input">
+        <input type="hidden" name="name8" value="<%=name8%>" class="people_input">
+        <input type="hidden" name="name9" value="<%=name9%>" class="people_input">
+    </div>
+</form>
+</div>
