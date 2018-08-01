@@ -1,0 +1,16 @@
+<div class="center">
+   
+  Here are your names.
+   <%mixing = names_arry.shuffle%>
+   <%if mixing.length.odd? == false%>
+     <%names_arry2 = mixing.each_slice(2).to_a%>
+   <%else%>
+    <%names_arry2 = mixing.each_slice(2).to_a%>
+    <%names_arry3 = names_arry2.last(2)%>
+    <%names_arry3 = names_arry3[0] + names_arry3[1]%>
+    <%names_arry2 = names_arry2[0..-3]%>
+    <%names_arry2.push(names_arry3)%>
+   <%end%>
+ </div>
+ <%= names_arry2%>
+Test
